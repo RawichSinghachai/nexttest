@@ -34,6 +34,7 @@ export const register = async (req: NextApiRequest, res: NextApiResponse) => {
       },
     ]);
   await client.close();
+  res.status(200).json({ data: "ok"});
 };
 
 export const login = async (req: NextApiRequest, res: NextApiResponse) => {
