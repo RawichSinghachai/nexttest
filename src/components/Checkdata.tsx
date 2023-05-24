@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { save } from '../stores/UserDataStore';
 import { RootState } from '../stores/store';
-// import {  useParams } from 'react-router-dom';
 import { useRouter } from 'next/router'
 type Props = {}
 
@@ -15,29 +14,30 @@ const Checkdata = (props: Props) => {
 
 
 
-    useEffect(() => {
+useEffect(() => {
 
-        //send datauser from database to reducx
-        axios.post('http://localhost:3000/api/users/auth', {
-            token: sessionStorage.getItem('token')
-        },
-            { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }
-        ).then(datauser => {
-            dispatch(save(datauser.data))
-            // console.log(datauser.data);
-        }).catch((err) => {
-            console.log('err')
-            //for test
-        }
-        )
+    //send datauser from database to reducx
+    axios.post('http://localhost:3000/api/users/auth', {
+        token: sessionStorage.getItem('token')
+    },
+        { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }
+    ).then(datauser => {
+        dispatch(save(datauser.data))
+        // console.log(datauser.data);
+    }).catch((err) => {
+        console.log('err')
+        //for test
+    }
+    )
 
-        //block student to access admin
-        // if (userdata.type === 'Student' && router.pathname === '/pathtoblock') {
-        //     router.back();
-        // }
+    //block student to access admin
+    // if (userdata.type === 'Student' && router.pathname === '/pathtoblock') {
+    //     router.back();
+    // }
 
 
-        //check path for student to access course
+    //check path for student to access course
+    if (mycourse) {
         if (router.pathname.split('/')[1] === 'classroom') {
             let back: boolean = false
             for (let i = 0; i < userdata.course.length; i++) {
@@ -48,11 +48,12 @@ const Checkdata = (props: Props) => {
             }
 
             if (!back) {
-                router.push('/course')
+                 router.push('/course')
             }
         }
+    }
+},[])
 
-    }, [])
     return (
         <>
         </>
