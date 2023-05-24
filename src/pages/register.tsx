@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
 import ImageListItem from '@mui/material/ImageListItem';
 import Checkdata from '@/components/Checkdata';
-
+import Image from 'next/image';
 export default function FormRegister() {
  
 
@@ -36,7 +36,7 @@ export default function FormRegister() {
 
 
               <ImageListItem sx={{ width:{md:500,sm:350,xs:0}, maxHeight: 500 ,pl:{md:2,sm:2,xs:0}}}>
-                <img src='https://i.pinimg.com/564x/dd/ae/1c/ddae1c1588c7e7c490b13c05851812f5.jpg'/>
+                <Image src='https://i.pinimg.com/564x/dd/ae/1c/ddae1c1588c7e7c490b13c05851812f5.jpg' alt="Picture of the author"/>
               </ImageListItem>
           </Stack>
         </Card>

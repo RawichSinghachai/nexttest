@@ -24,7 +24,7 @@ const Checkdata = (props: Props) => {
             { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }
         ).then(datauser => {
             dispatch(save(datauser.data))
-            console.log(datauser.data);
+            // console.log(datauser.data);
         }).catch((err) => {
             console.log('err')
             //for test

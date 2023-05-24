@@ -11,7 +11,7 @@ import axios from 'axios';
 import Checkdata from '@/components/Checkdata';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-
+import Image from 'next/image';
 
 export default function Login() {
   const router = useRouter()
@@ -45,7 +45,7 @@ export default function Login() {
           <Stack direction="row" justifyContent="flex-start" alignItems="center" >
 
               <ImageListItem sx={{ width:{md:500,sm:350,xs:0}, maxHeight: 500 ,pr:{md:2,sm:2,xs:0}}}>
-                <img src='https://i.pinimg.com/736x/f1/94/59/f19459f518dcedcf5da062dfd6db615d.jpg'/>
+                <Image src='https://i.pinimg.com/736x/f1/94/59/f19459f518dcedcf5da062dfd6db615d.jpg' alt="Picture of the author"/>
               </ImageListItem>
 
 
