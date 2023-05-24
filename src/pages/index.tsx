@@ -28,8 +28,6 @@ export default function Home() {
     setState({ ...state, [anchor]: open });
   };
 
-  
-
   return (
     <>
     <Checkdata/>

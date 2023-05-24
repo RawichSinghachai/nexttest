@@ -23,7 +23,7 @@ export default function Login() {
 
   const onsubmit = async(e:any) =>{
     e.preventDefault()
-    const datauser = await axios.post('http://localhost:3000/api/users/login',{
+    const datauser = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/users/login`,{
       username:name,
       password:password
     })
@@ -45,7 +45,7 @@ export default function Login() {
           <Stack direction="row" justifyContent="flex-start" alignItems="center" >
 
               <ImageListItem sx={{ width:{md:500,sm:350,xs:0}, maxHeight: 500 ,pr:{md:2,sm:2,xs:0}}}>
-                <Image src='https://i.pinimg.com/736x/f1/94/59/f19459f518dcedcf5da062dfd6db615d.jpg' alt="Picture of the author"/>
+                <img src='https://i.pinimg.com/736x/f1/94/59/f19459f518dcedcf5da062dfd6db615d.jpg'/>
               </ImageListItem>
 
 

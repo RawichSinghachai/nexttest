@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { MongoClient } from "mongodb";
-const client: any = new MongoClient("mongodb://127.0.0.1:27017/TutorWeb");
+const client: any = new MongoClient(process.env.NEXT_PUBLIC_MONGODB!);
 const jwt = require("jsonwebtoken");
 
-const secret = "TutorWeb";
+const secret = process.env.NEXT_PUBLIC_SECRET;
 
 export const findAll = async (req: NextApiRequest, res: NextApiResponse) => {
   await client.connect();

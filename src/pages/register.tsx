@@ -36,7 +36,7 @@ export default function FormRegister() {
 
 
               <ImageListItem sx={{ width:{md:500,sm:350,xs:0}, maxHeight: 500 ,pl:{md:2,sm:2,xs:0}}}>
-                <Image src='https://i.pinimg.com/564x/dd/ae/1c/ddae1c1588c7e7c490b13c05851812f5.jpg' alt="Picture of the author"/>
+                <img src='https://i.pinimg.com/564x/dd/ae/1c/ddae1c1588c7e7c490b13c05851812f5.jpg' />
               </ImageListItem>
           </Stack>
         </Card>

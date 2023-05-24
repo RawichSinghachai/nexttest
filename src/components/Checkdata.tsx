@@ -17,7 +17,7 @@ const Checkdata = (props: Props) => {
 useEffect(() => {
 
     //send datauser from database to reducx
-    axios.post('http://localhost:3000/api/users/auth', {
+    axios.post(`${process.env.NEXT_PUBLIC_URL}/api/users/auth`, {
         token: sessionStorage.getItem('token')
     },
         { headers: { Authorization: `Bearer ${sessionStorage.getItem('token')}` } }

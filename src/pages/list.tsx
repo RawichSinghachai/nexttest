@@ -96,7 +96,7 @@ export default function List() {
     const [student, setStudent] = useState<any>([])
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/users').then(users => {
+        axios.get(`${process.env.NEXT_PUBLIC_URL}/api/users`).then(users => {
             setStudent(users.data)
             console.log(users.data)
         })
